@@ -1,7 +1,4 @@
 import axios from 'axios'
-import Vue from 'vue'
-import VueCookies from 'vue-cookies'
-Vue.use(VueCookies)
 
 const service = axios.create({
   baseURL: 'http://localhost:8898/', // 前端地址，服务器要更换
@@ -17,7 +14,6 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   config => {
-    config.headers.Authorization = Vue.$cookies.get('token')
     return config
   },
   error => {
