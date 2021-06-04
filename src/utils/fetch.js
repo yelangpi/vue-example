@@ -5,6 +5,7 @@ const service = axios.create({
   withCredentials: false,
   headers: {
     'Content-Type': 'application/json'
+    // 'Content-Type': 'multipart/form-data;boundary=----WebKitFormBoundary' + new Date().getTime() 上传文件头
   },
   validateStatus: function(status) {
     return status === 200

@@ -102,10 +102,16 @@
 </template>
 
 <script>
+import { GetXXX } from '@/api/example'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted() {
+    GetXXX().then(response => {
+      console.log(response.data)
+    })
   }
 }
 </script>
